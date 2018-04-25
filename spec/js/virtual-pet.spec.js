@@ -5,4 +5,15 @@ describe('Virtual Pet', function() {
 		expect(virtualPet.getThirst()).toEqual(10)
 		expect(virtualPet.getCleanliness()).toEqual(10)
 	})
+
+	describe('feed()', function() {
+		it('should reduce hunger', function() {
+			const wallace = new VirtualPet()
+			const expected = wallace.getHunger() - 3
+			wallace.feed()
+			const underTest = wallace.getHunger()
+
+			expect(expected).toEqual(underTest)
+		})
+	})
 })

@@ -12,3 +12,7 @@ VirtualPet.prototype.getThirst = function() {
 VirtualPet.prototype.getCleanliness = function() {
 	return this._cleanliness
 }
+
+VirtualPet.prototype.feed = function() {
+	this._hunger -= 3
+}
