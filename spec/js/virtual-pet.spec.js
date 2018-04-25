@@ -27,4 +27,15 @@ describe('Virtual Pet', function() {
 			expect(expected).toEqual(underTest)
 		})
 	})
+
+	describe('clean()', function() {
+		it('should increase cleanliness', function() {
+			const jojo = new VirtualPet()
+			const expected = jojo.getCleanliness() + 3
+			jojo.clean()
+			const underTest = jojo.getCleanliness()
+
+			expect(expected).toEqual(underTest)
+		})
+	})
 })
