@@ -5,10 +5,15 @@ describe('Virtual Pet Shelter', function() {
 		})
 	})
 	describe('run()', function() {
+		const virtualPetApp = new VirtualPetApp()
+		let currentTurn = virtualPetApp.getTurn() + 1
+		const underTest = virtualPetApp.run()
 		it('should run our application', function() {
-			const virtualPetApp = new VirtualPetApp()
-			const underTest = virtualPetApp.run()
 			expect(underTest).toBe(true)
+		})
+		it('should implement a loop system', function() {
+			let expectedTurn = virtualPetApp.getTurn()
+			expect(currentTurn).toEqual(expectedTurn)
 		})
 	})
 })
