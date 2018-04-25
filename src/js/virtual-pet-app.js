@@ -4,8 +4,8 @@ const VirtualPetApp = function() {
 
 VirtualPetApp.prototype.run = function() {
 	let virtualPet
+	virtualPet = new VirtualPet('Wallace', 'Cat', 'Always a hungry guy')
 	while (this.userInput !== 'quit') {
-		virtualPet = new VirtualPet('Wallace', 'Cat', 'Always a hungry guy')
 		console.log(`
 			Welcome to Donny's Virtual Pet Facility!
 			How would you like to interact with Wallace?
@@ -19,6 +19,42 @@ VirtualPetApp.prototype.run = function() {
 			Type 'quit' to exit
 		`)
 		this.userInput = prompt('What option would you like to choose?')
+		switch (this.userInput) {
+			case '1':
+				virtualPet.feed()
+				break
+			case '2':
+				virtualPet.giveDrink()
+				break
+			case '3':
+				virtualPet.clean()
+				break
+			case '4':
+				console.log(`
+					${virtualPet.getName()} is ${virtualPet.getDescription()}
+				`)
+				break
+			case '5':
+				console.log(`
+					Animal type is: ${this.getType()}
+				`)
+				break
+			case '6':
+				console.log(`
+					Turn number: ${this.getTurn()}
+				`)
+				break
+			default:
+				break
+		}
+		console.log(`
+			${virtualPet.getName()} the ${virtualPet.getType()}'s Stats:
+
+			Hunger: ${virtualPet.getHunger()}
+			Thirst: ${virtualPet.getThirst()}
+			Cleanliness: ${virtualPet.getCleanliness()}
+		`)
+		virtualPet.tick()
 		this._turn++
 	}
 	return true

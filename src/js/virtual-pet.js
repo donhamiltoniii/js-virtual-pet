@@ -11,11 +11,20 @@ const VirtualPet = function(name, type, description) {
 VirtualPet.prototype.getCleanliness = function() {
 	return this._cleanliness
 }
+VirtualPet.prototype.getDescription = function() {
+	return this.description
+}
 VirtualPet.prototype.getHunger = function() {
 	return this._hunger
 }
+VirtualPet.prototype.getName = function() {
+	return this.name
+}
 VirtualPet.prototype.getThirst = function() {
 	return this._thirst
+}
+VirtualPet.prototype.getType = function() {
+	return this.type
 }
 
 VirtualPet.prototype.clean = function() {
