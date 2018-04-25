@@ -15,5 +15,12 @@ describe('Virtual Pet Shelter', function() {
 			let expectedTurn = virtualPetApp.getTurn()
 			expect(currentTurn).toEqual(expectedTurn)
 		})
+		describe('userInput', function() {
+			it('should accept user input', function() {
+				const userInput = virtualPetApp.getUserInput()
+				virtualPetApp.userInput = 'quit'
+				expect(userInput).toBe('quit')
+			})
+		})
 	})
 })

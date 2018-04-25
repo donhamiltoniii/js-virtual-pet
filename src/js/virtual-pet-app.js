@@ -3,8 +3,8 @@ const VirtualPetApp = function() {
 }
 
 VirtualPetApp.prototype.run = function() {
-	let userInput, virtualPet
-	while (userInput !== 'quit') {
+	let virtualPet
+	while (this.userInput !== 'quit') {
 		virtualPet = new VirtualPet('Wallace', 'Cat', 'Always a hungry guy')
 		console.log(`
 			Welcome to Donny's Virtual Pet Facility!
@@ -18,7 +18,7 @@ VirtualPetApp.prototype.run = function() {
 			6. Check turn
 			Type 'quit' to exit
 		`)
-		userInput = prompt('What option would you like to choose?')
+		this.userInput = prompt('What option would you like to choose?')
 		this._turn++
 	}
 	return true
@@ -26,4 +26,7 @@ VirtualPetApp.prototype.run = function() {
 
 VirtualPetApp.prototype.getTurn = function() {
 	return this._turn
+}
+VirtualPetApp.prototype.getUserInput = function() {
+	return this.userInput
 }
