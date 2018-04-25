@@ -16,4 +16,15 @@ describe('Virtual Pet', function() {
 			expect(expected).toEqual(underTest)
 		})
 	})
+
+	describe('giveDrink()', function() {
+		it('should reduce thirst', function() {
+			const maurice = new VirtualPet()
+			const expected = maurice.getThirst() - 3
+			maurice.giveDrink()
+			const underTest = maurice.getThirst()
+
+			expect(expected).toEqual(underTest)
+		})
+	})
 })
