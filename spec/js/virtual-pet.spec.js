@@ -1,9 +1,9 @@
 describe('Virtual Pet', function() {
 	it('should have instance variables', function() {
 		const virtualPet = new VirtualPet('Pet', 'Animal', 'Generic animal')
-		expect(virtualPet.getHunger()).toEqual(10)
-		expect(virtualPet.getThirst()).toEqual(10)
-		expect(virtualPet.getCleanliness()).toEqual(10)
+		expect(virtualPet.getHunger()).toEqual(30)
+		expect(virtualPet.getThirst()).toEqual(30)
+		expect(virtualPet.getCleanliness()).toEqual(30)
 	})
 
 	describe('instance modifiers', function() {
