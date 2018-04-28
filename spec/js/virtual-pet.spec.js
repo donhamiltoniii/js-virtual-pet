@@ -1,14 +1,14 @@
-describe('Virtual Pet', function() {
-	it('should have instance variables', function() {
+describe('Virtual Pet', () => {
+	it('should have instance variables', () => {
 		const virtualPet = new VirtualPet('Pet', 'Animal', 'Generic animal')
 		expect(virtualPet.getHunger()).toEqual(30)
 		expect(virtualPet.getThirst()).toEqual(30)
 		expect(virtualPet.getCleanliness()).toEqual(30)
 	})
 
-	describe('instance modifiers', function() {
-		describe('feed()', function() {
-			it('should reduce hunger', function() {
+	describe('instance modifiers', () => {
+		describe('feed()', () => {
+			it('should reduce hunger', () => {
 				const wallace = new VirtualPet(
 					'Wallace',
 					'Cat',
@@ -22,8 +22,8 @@ describe('Virtual Pet', function() {
 			})
 		})
 
-		describe('giveDrink()', function() {
-			it('should reduce thirst', function() {
+		describe('giveDrink()', () => {
+			it('should reduce thirst', () => {
 				const maurice = new VirtualPet(
 					'Momo',
 					'Kitten',
@@ -37,8 +37,8 @@ describe('Virtual Pet', function() {
 			})
 		})
 
-		describe('clean()', function() {
-			it('should increase cleanliness', function() {
+		describe('clean()', () => {
+			it('should increase cleanliness', () => {
 				const jojo = new VirtualPet(
 					'Jojo',
 					'Cat',
@@ -53,27 +53,27 @@ describe('Virtual Pet', function() {
 		})
 	})
 
-	describe('tick()', function() {
+	describe('tick()', () => {
 		const billy = new VirtualPet(
 			'Bill Bill',
 			'Cat',
 			'Sleeps on my favorite blanket',
 		)
-		it('should increase hunger', function() {
+		it('should increase hunger', () => {
 			const expected = billy.getHunger() + 1
 			billy.tick()
 			const underTest = billy.getHunger()
 
 			expect(expected).toEqual(underTest)
 		})
-		it('should increase thirst', function() {
+		it('should increase thirst', () => {
 			const expected = billy.getThirst() + 1
 			billy.tick()
 			const underTest = billy.getThirst()
 
 			expect(expected).toEqual(underTest)
 		})
-		it('should decrease cleanliness', function() {
+		it('should decrease cleanliness', () => {
 			const expected = billy.getCleanliness() - 1
 			billy.tick()
 			const underTest = billy.getCleanliness()
